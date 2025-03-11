@@ -18,10 +18,17 @@ const DashBoard = () => {
           <div className="container max-w-[1140px] mx-auto">
             <div className="w-full flex max-md:flex-col max-md:gap-2 items-center justify-between">
               <p className="font-semibold font-syne text-2xl max-lg:text-xl max-md:text-xl">
-                {saveFileName}
+                {saveFileName.length > 10
+                  ? `${saveFileName.slice(0, 10)}...`
+                  : saveFileName}
               </p>
+
               <button
-                onClick={() => router.push("/upload-file")}
+                onClick={() => {
+                  router.push("/upload-file");
+                  localStorage.removeItem("fileName");
+                  localStorage.removeItem("profileImage");
+                }}
                 className="uppercase font-syne rounded-md py-4 max-md:py-3 max-md:px-5 max-sm:py-2 max-sm:px-4 max-sm:text-sm px-6 cursor-pointer border-gray border border-solid"
               >
                 Upload more files

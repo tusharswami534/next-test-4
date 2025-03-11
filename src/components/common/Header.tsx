@@ -9,8 +9,10 @@ const Header = () => {
   const homePage = usePathname() === "/";
   const dashboardPage = usePathname() === "/dashboard";
   const [user, setUser] = useState({ firstName: "", secondName: "" });
+  const [profileImage, setProfileImage] = useState("");
 
   useEffect(() => {
+    // Retrieve form data from localStorage
     const storedData = localStorage.getItem("formData");
     if (storedData) {
       const parsedData = JSON.parse(storedData);
@@ -19,7 +21,15 @@ const Header = () => {
         secondName: parsedData.secondName,
       });
     }
+
+    // Retrieve the profile image (object URL) from localStorage
+    const storedImage = localStorage.getItem("profileImage");
+    if (storedImage) {
+      setProfileImage(storedImage);
+    }
   }, []);
+
+  console.log(profileImage, "mage");
 
   return (
     <div className={`py-[19.9px] px-4 ${dashboardPage && "bg-light-white"}`}>
@@ -41,15 +51,17 @@ const Header = () => {
         <div className="flex cursor-pointer items-center gap-[7px]">
           <Image
             src={
-              dashboardPage
-                ? "/assets/image/webp/admin-image.webp"
+              dashboardPage && profileImage
+                ? profileImage
                 : "/assets/image/webp/anymous-profile.webp"
             }
+            unoptimized // Add this line to allow dynamic URLs
             width={40}
             height={40}
             alt="admin"
-            className=" pointer-events-none"
+            className="rounded-full size-10 object-cover pointer-events-none"
           />
+
           {!homePage ? (
             <div className="flex flex-col max-sm:hidden gap-[1px]">
               <p className="font-syne font-medium leading-[100%]">
