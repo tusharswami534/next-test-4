@@ -34,13 +34,13 @@ const Login = () => {
       setFormData(initialFormData);
       setError(false);
       toast.success("Login Successful");
-      router.push("/home");
+      router.push("/upload-file");
     }
   };
 
   useEffect(() => {
     if (localStorage.getItem("isLogin") === "true") {
-      router.push("/home");
+      router.push("/upload-file");
     }
   }, []);
 

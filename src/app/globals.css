@@ -14,9 +14,11 @@
 @theme {
   --color-dark-black: #1B1B1B;
   --color-red: #ED1C24;
+  --color-sky-blue: #E7EAEE;
 }
 
 @theme {
   /* lineHeight */
   --spacing-150: 150%;
+  --spacing-125: 125%;
 }
