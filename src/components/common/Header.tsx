@@ -7,8 +7,9 @@ import React from "react";
 
 const Header = () => {
   const homePage = usePathname() === "/";
+  const dashboardPage = usePathname() === "/dashboard";
   return (
-    <div className="py-[19.9px] px-4">
+    <div className={`py-[19.9px] px-4 ${dashboardPage && "bg-light-white"}`}>
       <div className="max-w-[1140px] container mx-auto justify-between flex">
         <div className="flex gap-2.5 items-center">
           <Link href={"/"}>

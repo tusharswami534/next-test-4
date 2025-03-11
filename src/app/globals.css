@@ -16,10 +16,13 @@
   --color-red: #ED1C24;
   --color-sky-blue: #E7EAEE;
   --color-gray: #818181;
+  --color-light-blue: #FFF1F2;
+  --color-light-white: #F6F6F6;
 }
 
 @theme {
   /* lineHeight */
-  --spacing-150: 150%;
+  --spacing-100: 100%;
   --spacing-125: 125%;
+  --spacing-150: 150%;
 }
