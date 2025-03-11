@@ -3,6 +3,8 @@ import { UPLOAD_FILE_LIST } from "@/utils/helper";
 import { CheckIcon, PlusIcon, UploadIcon, UplodingIcon } from "@/utils/icons";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import UploadData from "./UploadData";
+import UploadingData from "./UploadingData";
 
 const UploadFIle = () => {
   const router = useRouter();
@@ -10,8 +12,18 @@ const UploadFIle = () => {
   const [fileName, setFileName] = useState("");
   const [uploadCount, setUploadCount] = useState(0);
 
+  //   on Change
   const upLoadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const fileName = e.target.files?.[0].name ?? "";
+    // storage data
+    setFileName(fileName);
+    localStorage.setItem("fileName", fileName);
+    setFileUploaded(true);
+  };
+  // on Drop
+  const DropFile = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const fileName = e.dataTransfer.files?.[0].name ?? "";
     // storage data
     setFileName(fileName);
     localStorage.setItem("fileName", fileName);
@@ -54,46 +66,17 @@ const UploadFIle = () => {
           <div className="shadow-[0_16px_42.7px_0_#00000014] rounded-xl bg-white w-full p-4">
             <div className="cursor-pointer w-full h-[326px] rounded-lg border border-dashed border-red">
               {fileUploaded === false ? (
-                <div className="w-full h-full !cursor-pointer">
-                  <input onChange={upLoadFile} type="file" id="file" hidden />
-                  <label htmlFor="file">
-                    <div className="w-full h-full rounded-lg flex flex-col justify-center items-center">
-                      <UploadIcon />
-                      <div className="flex flex-col text-center gap-1 my-4">
-                        <p className="leading-150">
-                          Paste or drag and drop files here{" "}
-                        </p>
-                        <p className="leading-150 text-center text-sm text-black/40">
-                          WAR, ZIP or EAR, file size no more than 10MB{" "}
-                        </p>
-                      </div>
-                      <div className="size-8 bg-red rounded-sm flex justify-center items-center">
-                        <PlusIcon />
-                      </div>
-                    </div>
-                  </label>
-                </div>
+                <UploadData
+                  customOnChange={upLoadFile}
+                  customOnDrop={DropFile}
+                  customOnDragOver={(e: React.DragEvent) => e.preventDefault()}
+                />
               ) : (
-                <div className="w-full h-full flex flex-col justify-center items-center">
-                  <div className="flex gap-3 max-w-[370px] w-full p-4 mx-auto">
-                    <UplodingIcon />
-                    <div className="flex w-full gap-2 flex-col">
-                      <div className="flex max-w-[306px] w-full justify-between">
-                        <p className="leading-125">
-                          Uploading{" "}
-                          <span className="font-bold">{fileName}</span>
-                        </p>
-                        <p>{uploadCount}%</p>
-                      </div>
-                      <div className="bg-sky-blue h-[3px] rounded-sm w-full">
-                        <div
-                          className="bg-red w-0 transition-all duration-300 h-full"
-                          style={{ width: `${uploadCount}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <UploadingData
+                  uploadFileName={fileName}
+                  percentage={uploadCount}
+                  countWidth={uploadCount}
+                />
               )}
             </div>
           </div>
