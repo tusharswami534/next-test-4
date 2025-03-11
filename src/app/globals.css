@@ -9,3 +9,14 @@
 .font-syne{
   font-family: 'Syne', sans-serif;
 }
+
+
+@theme {
+  --color-dark-black: #1B1B1B;
+  --color-red: #ED1C24;
+}
+
+@theme {
+  /* lineHeight */
+  --spacing-150: 150%;
+}
