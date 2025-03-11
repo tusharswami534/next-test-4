@@ -46,7 +46,7 @@ const DetailedMetrices = () => {
           ))}
         </div>
         <div className="max-w-[558px] relative max-md:max-w-[unset] w-full rounded-lg max-md:py-5 flex justify-center items-center bg-white">
-          <p className="font-medium text-xl max-md:text-lg max-sm:text-base font-syne bottom-3 left-5 absolute">
+          <p className="font-medium text-xl max-md:text-lg max-sm:left-3 max-sm:text-sm font-syne bottom-3 left-5 absolute">
             11 Starter processes
           </p>
           <Image

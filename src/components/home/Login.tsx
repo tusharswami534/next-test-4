@@ -45,7 +45,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="py-20 flex flex-col relative justify-center items-center">
+    <div className="py-20 max-sm:py-10 max-lg:py-16 max-md:py-14 flex flex-col relative justify-center items-center">
       <ToastContainer position="top-right" transition={Slide} />
       <h1 className="text-6xl max-lg:text-5xl max-md:text-4xl max-sm:text-3xl text-center font-bold font-syne">
         Welcome To Data <span className="text-red">skate</span>
@@ -126,7 +126,7 @@ const Login = () => {
         </div>
         <button
           onClick={handleSubmit}
-          className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hover:bg-blue-700"
+          className="w-full border border-solid border-red text-black  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline cursor-pointer hover:scale-95 hover:bg-red transition-all duration-300"
         >
           Submit
         </button>

@@ -38,7 +38,7 @@ const DashBoard = () => {
               <div className="max-w-[558px] max-lg:max-w-[unset] w-full bg-white rounded-lg py-[19px] max-sm:px-2 max-sm:py-3 px-4 items-center flex justify-between">
                 <div className="gap-4 max-sm:gap-2 flex items-center">
                   <div className="size-[60px] max-sm:size-10 flex justify-center items-center bg-light-blue rounded-full">
-                    <ComplexityIocn />
+                    <ComplexityIocn iconClass="max-sm:w-[65%]" />
                   </div>
                   <p className="font-medium font-sync text-xl max-lg:text-lg max-md:text-base max-sm:text-sm leading-100">
                     Complexity of the code
@@ -52,7 +52,7 @@ const DashBoard = () => {
                 <div className="max-w-[267px] max-lg:max-w-[558px] w-full bg-white rounded-lg py-[19px] px-4 max-sm:px-2 max-sm:py-3 items-center flex justify-between">
                   <div className="gap-4 max-sm:gap-2 flex items-center">
                     <div className="size-[60px] max-sm:size-10 flex justify-center items-center bg-light-blue rounded-full">
-                      <NoMachinesIcon />
+                      <NoMachinesIcon iconClass="max-sm:w-[65%]" />
                     </div>
                     <div className="flex flex-col">
                       <p className="text-[28px] max-sm:text-2xl font-medium leading-100">
@@ -67,7 +67,7 @@ const DashBoard = () => {
                 <div className="max-w-[267px] max-lg:max-w-[558px] w-full bg-white rounded-lg py-[19px] px-4 max-sm:px-2 max-sm:py-3 items-center flex justify-between">
                   <div className="gap-4 max-sm:gap-2 flex items-center">
                     <div className="size-[60px] max-sm:size-10 flex justify-center items-center bg-light-blue rounded-full">
-                      <NoParsIcon />
+                      <NoParsIcon iconClass="max-sm:w-[65%]" />
                     </div>
                     <div className="flex flex-col">
                       <p className="text-[28px] max-sm:text-2xl font-medium leading-100">

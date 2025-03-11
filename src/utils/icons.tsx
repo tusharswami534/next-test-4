@@ -96,8 +96,9 @@ export const UplodingIcon = () => (
   </svg>
 );
 
-export const ComplexityIocn = () => (
+export const ComplexityIocn = ({ iconClass }: { iconClass?: string }) => (
   <svg
+    className={iconClass}
     width="34"
     height="29"
     viewBox="0 0 34 29"
@@ -111,8 +112,9 @@ export const ComplexityIocn = () => (
   </svg>
 );
 
-export const NoMachinesIcon = () => (
+export const NoMachinesIcon = ({ iconClass }: { iconClass?: string }) => (
   <svg
+    className={iconClass}
     width="32"
     height="32"
     viewBox="0 0 32 32"
@@ -129,8 +131,9 @@ export const NoMachinesIcon = () => (
   </svg>
 );
 
-export const NoParsIcon = () => (
+export const NoParsIcon = ({ iconClass }: { iconClass?: string }) => (
   <svg
+    className={iconClass}
     width="36"
     height="36"
     viewBox="0 0 36 36"

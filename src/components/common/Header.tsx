@@ -32,7 +32,11 @@ const Header = () => {
   console.log(profileImage, "mage");
 
   return (
-    <div className={`py-[19.9px] px-4 ${dashboardPage && "bg-light-white"}`}>
+    <div
+      className={`py-[19.9px] max-sm:p-4 px-4 ${
+        dashboardPage && "bg-light-white"
+      }`}
+    >
       <div className="max-w-[1140px] container mx-auto justify-between flex">
         <div className="flex gap-2.5 items-center">
           <Link href={"/"}>
@@ -43,8 +47,8 @@ const Header = () => {
               alt="page-logo"
             />
           </Link>
-          <div className="h-[19px] w-[1.5px] bg-black"></div>
-          <p className="font-syne font-medium max-md:text-base">
+          <div className="h-[19px] max-sm:hidden w-[1.5px] bg-black"></div>
+          <p className="font-syne max-sm:hidden font-medium max-md:text-base">
             TMM Accelerator
           </p>
         </div>
