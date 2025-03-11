@@ -57,14 +57,14 @@ const UploadFIle = () => {
   }, [fileUploaded, uploadCount]);
 
   return (
-    <div className="pt-9 pb-[69px] px-4">
+    <div className="pt-9 pb-[69px] max-sm:py-10 px-4">
       <div className="max-w-[1140px] container mx-auto">
-        <h2 className="font-syne font-semibold mb-[34px] text-center max-lg:text-3xl text-[32px] max-md:text-2xl max-sm:text-xl">
+        <h2 className="font-syne font-semibold mb-[34px] max-md:mb-7 max-sm:mb-5 text-center max-lg:text-3xl text-[32px] max-md:text-2xl max-sm:text-xl">
           Read & process your files online
         </h2>
         <div className="max-w-[786px] mx-auto">
           <div className="shadow-[0_16px_42.7px_0_#00000014] rounded-xl bg-white w-full p-4">
-            <div className="cursor-pointer w-full h-[326px] rounded-lg border border-dashed border-red">
+            <div className="cursor-pointer w-full h-[326px] max-md:h-[300px] max-sm:h-[250px] rounded-lg border border-dashed border-red">
               {fileUploaded === false ? (
                 <UploadData
                   customOnChange={upLoadFile}
@@ -80,7 +80,7 @@ const UploadFIle = () => {
               )}
             </div>
           </div>
-          <div className="flex justify-between mt-12 items-center">
+          <div className="flex justify-between max-md:flex-col max-md:justify-start max-md:items-start max-md:gap-4 mt-12 max-md:mt-8 max-sm:mt-4 items-center">
             <p className="max-w-[335px] text-sm leading-150">
               Our accelerator allows you to upload, read, and process multiple
               file types (e.g., Python, JAR, ZIP), extracting key data like

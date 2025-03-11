@@ -1,7 +1,7 @@
 "use client";
 import { ComplexityIocn, NoMachinesIcon, NoParsIcon } from "@/utils/icons";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import DetailedMetrices from "./DetailedMetrices";
 
 const DashBoard = () => {
@@ -12,59 +12,73 @@ const DashBoard = () => {
   });
 
   return (
-    <div className="bg-light-white">
-      <div className="container max-w-[1140px] mx-auto">
-        <div className="w-full flex items-center justify-between">
-          <p className="font-semibold text-2xl max-lg:text-xl max-md:text-xl">
-            {saveFileName}
-          </p>
-          <button
-            onClick={() => router.push("/upload-file")}
-            className="uppercase rounded-md py-4 px-6 cursor-pointer border-gray border border-solid"
-          >
-            Upload more files
-          </button>
-        </div>
-        <div className="w-full flex mt-6 gap-6">
-          <div className="max-w-[558px] w-full bg-white rounded-lg py-[19px] px-4 items-center flex justify-between">
-            <div className="gap-4 flex items-center">
-              <div className="size-[60px] flex justify-center items-center bg-light-blue rounded-full">
-                <ComplexityIocn />
-              </div>
-              <p className="font-medium font-sync text-xl leading-100">
-                Complexity of the code
+    <>
+      <Suspense>
+        <div className="bg-light-white pb-[46px] px-4">
+          <div className="container max-w-[1140px] mx-auto">
+            <div className="w-full flex max-md:flex-col max-md:gap-2 items-center justify-between">
+              <p className="font-semibold font-syne text-2xl max-lg:text-xl max-md:text-xl">
+                {saveFileName}
               </p>
+              <button
+                onClick={() => router.push("/upload-file")}
+                className="uppercase font-syne rounded-md py-4 max-md:py-3 max-md:px-5 max-sm:py-2 max-sm:px-4 max-sm:text-sm px-6 cursor-pointer border-gray border border-solid"
+              >
+                Upload more files
+              </button>
             </div>
-            <button className="py-2 px-4 text-red border border-solid border-red bg-light-blue rounded-[49px] text-sm font-semibold">
-              HIGH
-            </button>
-          </div>
-          <div className="max-w-[267px] w-full bg-white rounded-lg py-[19px] px-4 items-center flex justify-between">
-            <div className="gap-4 flex items-center">
-              <div className="size-[60px] flex justify-center items-center bg-light-blue rounded-full">
-                <NoMachinesIcon />
+            <div className="w-full max-lg:flex-wrap flex mt-6 gap-6 max-sm:gap-4">
+              <div className="max-w-[558px] max-lg:max-w-[unset] w-full bg-white rounded-lg py-[19px] max-sm:px-2 max-sm:py-3 px-4 items-center flex justify-between">
+                <div className="gap-4 max-sm:gap-2 flex items-center">
+                  <div className="size-[60px] max-sm:size-10 flex justify-center items-center bg-light-blue rounded-full">
+                    <ComplexityIocn />
+                  </div>
+                  <p className="font-medium font-sync text-xl max-lg:text-lg max-md:text-base max-sm:text-sm leading-100">
+                    Complexity of the code
+                  </p>
+                </div>
+                <button className="py-2 px-4 text-red border border-solid border-red bg-light-blue rounded-[49px] text-sm font-semibold">
+                  HIGH
+                </button>
               </div>
-              <div className="flex flex-col">
-                <p className="text-[28px] font-medium leading-100">-</p>
-                <p className="text-sm leading-100">No of Machines</p>
+              <div className="max-w-[558px] max-lg:max-w-[unset] w-full max-sm:gap-4 flex gap-6">
+                <div className="max-w-[267px] max-lg:max-w-[558px] w-full bg-white rounded-lg py-[19px] px-4 max-sm:px-2 max-sm:py-3 items-center flex justify-between">
+                  <div className="gap-4 max-sm:gap-2 flex items-center">
+                    <div className="size-[60px] max-sm:size-10 flex justify-center items-center bg-light-blue rounded-full">
+                      <NoMachinesIcon />
+                    </div>
+                    <div className="flex flex-col">
+                      <p className="text-[28px] max-sm:text-2xl font-medium leading-100">
+                        -
+                      </p>
+                      <p className="text-sm max-sm:text-xs leading-100">
+                        No of Machines
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="max-w-[267px] max-lg:max-w-[558px] w-full bg-white rounded-lg py-[19px] px-4 max-sm:px-2 max-sm:py-3 items-center flex justify-between">
+                  <div className="gap-4 max-sm:gap-2 flex items-center">
+                    <div className="size-[60px] max-sm:size-10 flex justify-center items-center bg-light-blue rounded-full">
+                      <NoParsIcon />
+                    </div>
+                    <div className="flex flex-col">
+                      <p className="text-[28px] max-sm:text-2xl font-medium leading-100">
+                        -
+                      </p>
+                      <p className="text-sm max-sm:text-xs leading-100">
+                        No of Pars
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="max-w-[267px] w-full bg-white rounded-lg py-[19px] px-4 items-center flex justify-between">
-            <div className="gap-4 flex items-center">
-              <div className="size-[60px] flex justify-center items-center bg-light-blue rounded-full">
-                <NoParsIcon />
-              </div>
-              <div className="flex flex-col">
-                <p className="text-[28px] font-medium leading-100">-</p>
-                <p className="text-sm leading-100">No of Pars</p>
-              </div>
-            </div>
+            <DetailedMetrices />
           </div>
         </div>
-        <DetailedMetrices />
-      </div>
-    </div>
+      </Suspense>
+    </>
   );
 };
 

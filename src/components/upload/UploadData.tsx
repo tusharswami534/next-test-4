@@ -17,8 +17,10 @@ const UploadData = ({
         >
           <UploadIcon />
           <div className="flex flex-col text-center gap-1 my-4">
-            <p className="leading-150">Paste or drag and drop files here </p>
-            <p className="leading-150 text-center text-sm text-black/40">
+            <p className="leading-150 max-md:text-sm">
+              Paste or drag and drop files here{" "}
+            </p>
+            <p className="leading-150 text-center max-md:text-xs text-sm text-black/40">
               WAR, ZIP or EAR, file size no more than 10MB{" "}
             </p>
           </div>
