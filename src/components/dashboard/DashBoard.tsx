@@ -8,7 +8,7 @@ const DashBoard = () => {
   const router = useRouter();
   const [saveFileName, setSaveFileName] = useState("");
   useEffect(() => {
-    setSaveFileName(localStorage.getItem("fileName") as any);
+    setSaveFileName(localStorage.getItem("fileName") as string);
   });
 
   return (
@@ -44,7 +44,7 @@ const DashBoard = () => {
                     Complexity of the code
                   </p>
                 </div>
-                <button className="py-2 px-4 text-red border border-solid border-red bg-light-blue rounded-[49px] text-sm font-semibold">
+                <button className="py-2 px-4 cursor-pointer hover:scale-95 transition-all duration-300 text-red border border-solid border-red bg-light-blue rounded-[49px] text-sm font-semibold">
                   HIGH
                 </button>
               </div>

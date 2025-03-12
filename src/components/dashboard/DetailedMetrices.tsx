@@ -6,9 +6,8 @@ import React from "react";
 
 const DetailedMetrices = () => {
   const params = useSearchParams();
-  const card = params.get("card") || "default-value";
+  const card = params.get("card");
   const router = useRouter();
-  console.log(card, router);
 
   return (
     <div className="bg-light-white">
@@ -21,7 +20,6 @@ const DetailedMetrices = () => {
             <button
               key={index}
               onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
-                e.preventDefault();
                 router.push(
                   `/dashboard?card=${item.title
                     .toLowerCase()

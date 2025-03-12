@@ -19,7 +19,7 @@ const UploadFile = () => {
     const file = e.target.files?.[0];
     if (file && file.type.startsWith("image/")) {
       const fileName = file.name;
-      const objectUrl = URL.createObjectURL(file); // Create object URL
+      const objectUrl = URL.createObjectURL(file);
       setShowImage(objectUrl);
       localStorage.setItem("fileName", fileName);
       localStorage.setItem("profileImage", objectUrl);
@@ -36,10 +36,10 @@ const UploadFile = () => {
     const file = e.dataTransfer.files?.[0];
     if (file && file.type.startsWith("image/")) {
       const fileName = file.name;
-      const objectUrl = URL.createObjectURL(file); // Create object URL for image
+      const objectUrl = URL.createObjectURL(file);
       setFileName(fileName);
-      localStorage.setItem("fileName", fileName); // Save file name
-      localStorage.setItem("profileImage", objectUrl); // Save object URL
+      localStorage.setItem("fileName", fileName);
+      localStorage.setItem("profileImage", objectUrl);
       setFileUploaded(true);
     } else {
       alert("Please upload a valid image file.");
@@ -107,7 +107,11 @@ const UploadFile = () => {
                 />
               ) : (
                 <UploadingData
-                  uploadFileName={`${fileName.slice(0, 10)}...`}
+                  uploadFileName={
+                    fileName.length > 10
+                      ? `${fileName.slice(0, 10)}...`
+                      : fileName
+                  }
                   percentage={uploadCount}
                   countWidth={uploadCount}
                 />
