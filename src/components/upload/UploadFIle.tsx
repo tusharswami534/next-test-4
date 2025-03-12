@@ -70,6 +70,13 @@ const UploadFile = () => {
     };
   }, [fileUploaded, uploadCount]);
 
+  useEffect(() => {
+    const login = localStorage.getItem("isLogin");
+    if (!login) {
+      router.push("/");
+    }
+  });
+
   return (
     <div className="pt-9 pb-[69px] max-sm:py-10 relative overflow-hidden px-4">
       <Image
