@@ -55,7 +55,7 @@ const Header = () => {
                 ? profileImage
                 : "/assets/image/webp/anymous-profile.webp"
             }
-            unoptimized // Add this line to allow dynamic URLs
+            unoptimized
             width={40}
             height={40}
             alt="admin"
