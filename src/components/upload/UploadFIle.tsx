@@ -12,7 +12,6 @@ const UploadFile = () => {
   const [fileUploaded, setFileUploaded] = useState(false);
   const [fileName, setFileName] = useState("");
   const [uploadCount, setUploadCount] = useState(0);
-  const [showImage, setShowImage] = useState("");
 
   // Handle file input change
   const upLoadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +19,6 @@ const UploadFile = () => {
     if (file && file.type.startsWith("image/")) {
       const fileName = file.name;
       const objectUrl = URL.createObjectURL(file);
-      setShowImage(objectUrl);
       localStorage.setItem("fileName", fileName);
       localStorage.setItem("profileImage", objectUrl);
       console.log("File Name:", fileName);
@@ -90,12 +88,12 @@ const UploadFile = () => {
       />
       <div className="max-w-[1140px] container mx-auto">
         <h2 className="font-syne font-semibold mb-[34px] max-md:mb-7 max-sm:mb-5 text-center max-lg:text-3xl text-[32px] max-md:text-2xl max-sm:text-xl">
-          Upload Images Online
+          Read & process your files online
         </h2>
         <div className="max-w-[786px] mx-auto">
           <div className="shadow-[0_16px_42.7px_0_#00000014] rounded-xl bg-white w-full p-4 max-sm:p-2">
             <div
-              className="cursor-pointer w-full h-[326px] max-md:h-[300px] max-sm:h-[250px] rounded-lg border border-dashed border-red"
+              className="w-full h-[326px] max-md:h-[300px] max-sm:h-[250px] rounded-lg border border-dashed border-red"
               onDrop={DropFile}
               onDragOver={(e) => e.preventDefault()}
             >

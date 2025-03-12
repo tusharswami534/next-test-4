@@ -12,7 +12,6 @@ const Header = () => {
   const [profileImage, setProfileImage] = useState("");
 
   useEffect(() => {
-    // Retrieve form data from localStorage
     const storedData = localStorage.getItem("formData");
     if (storedData) {
       const parsedData = JSON.parse(storedData);
@@ -22,14 +21,11 @@ const Header = () => {
       });
     }
 
-    // Retrieve the profile image (object URL) from localStorage
     const storedImage = localStorage.getItem("profileImage");
     if (storedImage) {
       setProfileImage(storedImage);
     }
   }, []);
-
-  console.log(profileImage, "mage");
 
   return (
     <div

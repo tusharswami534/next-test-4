@@ -13,7 +13,7 @@ const UploadData = ({
         <div
           onDrop={customOnDrop}
           onDragOver={customOnDragOver}
-          className="w-full h-full rounded-lg flex flex-col justify-center items-center"
+          className="w-full h-full cursor-pointer rounded-lg flex flex-col justify-center items-center"
         >
           <UploadIcon />
           <div className="flex flex-col text-center gap-1 my-4">

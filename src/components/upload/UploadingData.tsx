@@ -12,7 +12,7 @@ const UploadingData = ({
   countWidth,
 }: uploadingData) => {
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center">
+    <div className="w-full h-full cursor-wait flex flex-col justify-center items-center">
       <div className="flex gap-3 max-w-[370px] w-full p-4 mx-auto">
         <UplodingIcon />
         <div className="flex w-full gap-2 flex-col">

@@ -27,7 +27,7 @@ const DetailedMetrices = () => {
                   { scroll: false }
                 );
               }}
-              className={`w-full bg-white flex rounded-lg cursor-pointer border border-solid items-center text-sm justify-between py-3 px-4 ${
+              className={`w-full bg-white flex rounded-lg cursor-pointer border border-solid items-center text-sm justify-between py-[11px] px-4 ${
                 card === item.title.toLowerCase().replaceAll(" ", "-")
                   ? "border-red"
                   : "border-transparent"
