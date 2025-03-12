@@ -10,6 +10,12 @@ const DashBoard = () => {
   useEffect(() => {
     setSaveFileName(localStorage.getItem("fileName") as string);
   });
+  useEffect(() => {
+    const login = localStorage.getItem("isLogin");
+    if (!login) {
+      router.push("/");
+    }
+  });
 
   return (
     <>
