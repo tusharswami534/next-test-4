@@ -18,7 +18,9 @@ const DashBoard = () => {
           <div className="container max-w-[1140px] mx-auto">
             <div className="w-full flex max-md:flex-col max-md:gap-2 items-center justify-between">
               <p className="font-semibold font-syne text-2xl max-lg:text-xl max-md:text-xl">
-                {saveFileName}
+                {saveFileName.length > 10
+                  ? `${saveFileName.slice(0, 10)}...`
+                  : saveFileName}
               </p>
               <button
                 onClick={() => {
