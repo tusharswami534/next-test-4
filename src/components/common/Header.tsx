@@ -55,7 +55,6 @@ const Header = () => {
                 ? profileImage
                 : "/assets/image/webp/anymous-profile.webp"
             }
-            unoptimized
             width={40}
             height={40}
             alt="admin"
