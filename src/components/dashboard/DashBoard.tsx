@@ -10,12 +10,6 @@ const DashBoard = () => {
   useEffect(() => {
     setSaveFileName(localStorage.getItem("fileName") as string);
   });
-  useEffect(() => {
-    const login = localStorage.getItem("isLogin");
-    if (!login) {
-      router.push("/");
-    }
-  });
 
   return (
     <>
@@ -24,9 +18,7 @@ const DashBoard = () => {
           <div className="container max-w-[1140px] mx-auto">
             <div className="w-full flex max-md:flex-col max-md:gap-2 items-center justify-between">
               <p className="font-semibold font-syne text-2xl max-lg:text-xl max-md:text-xl">
-                {saveFileName.length > 10
-                  ? `${saveFileName.slice(0, 10)}...`
-                  : saveFileName}
+                {saveFileName}
               </p>
               <button
                 onClick={() => {
